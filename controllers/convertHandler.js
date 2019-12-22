@@ -9,7 +9,8 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result = input.match(/\d+\.?\/?\d+/);
+    var result = input.match(/\d+\.?\d+\/?\d+\.?\d+/);
+    //input.match(/\d+\.?\/?\d+/);
     return result;
   };
   
