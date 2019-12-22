@@ -41,8 +41,9 @@ suite('Unit Tests', function(){
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      
-      //done();
+      var input = '2.3333//33.33L';
+      assert.equal(convertHandler.getNum(input),'2.3333/33.33');
+      done();
     });
     
     test('No Numerical Input', function(done) {
