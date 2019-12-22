@@ -23,7 +23,8 @@ suite('Unit Tests', function(){
     });
     
     test('Decimal Input', function(done) {
-      
+      var input = '32.789L';
+      assert.equal(convertHandler.getNum(input),32.789);
       //done();
     });
     
