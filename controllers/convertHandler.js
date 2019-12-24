@@ -10,7 +10,7 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
    
-    var result =  input.match(/\d+[^\//${1,}]\d+/);//https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
+    var result =  input.match(/\d+\///\d+/ig);//https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
        // var result =  input.match(/\d+[\/\d.]*|\d/);
     //input.match(/\d+\.?\d+\/?\d+\.?\d+/); my effort       
      return result;
