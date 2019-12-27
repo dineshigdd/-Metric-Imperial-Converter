@@ -9,8 +9,8 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-   
-    var result =  input.match(/\b['//']+\b/g);//https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
+   input='1//2';
+    var result =  input.match(/\/\//g);//https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
        // var result =  input.match(/\d+[\/\d.]*|\d/);
     //input.match(/\d+\.?\d+\/?\d+\.?\d+/); my effort   
     console.log("result is:" + result);
