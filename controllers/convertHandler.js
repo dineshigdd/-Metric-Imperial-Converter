@@ -9,10 +9,11 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result =  input.match(/\d[\/\d.]*|\d/);//https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
+    var result //=  input.match(/\d[\/\d.]*|\d/);
+    //https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
     
   //if input has ONLY numercal values and Math operators
-    var nonNumericInput = input.match(/\D);
+    var nonNumericInput = input.match(/\D^[/]/g);
     console.log("nonNumericInput:" + nonNumericInput)
       //result = input
     //else "error"
