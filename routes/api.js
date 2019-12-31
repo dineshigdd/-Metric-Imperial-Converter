@@ -17,7 +17,7 @@ module.exports = function (app) {
 
   app.route('/api/convert')
     .get(function (req, res){
-    console.log("req.query.input"+req.query.input);
+    console.log("input para: "+req.query.test);
       var input = req.query.input;
       var initNum = convertHandler.getNum(input);
       var initUnit = convertHandler.getUnit(input);
