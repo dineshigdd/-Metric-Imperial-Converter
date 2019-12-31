@@ -11,11 +11,12 @@ function ConvertHandler() {
   this.getNum = function(input) {
     var result =  input.match(/\d\D+[\/\d\D.]*|\d\D/);//https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
     
-    result = Number(result);
+    result = input.match(/\D+[\/\D.]*|\D/);
+    
     
        // var result =  input.match(/\d+[\/\d.]*|\d/);
     //input.match(/\d+\.?\d+\/?\d+\.?\d+/); my effort   
-    console.log("result is:" + result);
+    console.log("converthandler:" + result);
      return result;
   };
   
