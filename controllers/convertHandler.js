@@ -33,8 +33,8 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var result;
-    input.match(/(km)|(mi)|(gal)|L|(lbs)|(kg)/ig);
-    
+    var count = input.match(/(km)/ig).length;
+    console.log("count :"+count);
     return result;
   };
   
