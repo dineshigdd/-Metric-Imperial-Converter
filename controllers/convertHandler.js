@@ -18,12 +18,13 @@ function ConvertHandler() {
     var RegEx = RegExp('[a-z]','ig');
     var isNonNumericInput = RegEx.test(input);
     
-    if(!isNonNumericInput){
-      var isNumberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;
+    if(isNonNumericInput){
+      var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g).length;
     }
     
     console.log("nonNumericInput:" + isNonNumericInput)
-    if( isNumberOfUnits == 1 ){
+    console.log("numberOfUnits:" + numberOfUnits);
+    if( numberOfUnits == 1 ){
       result= numericInput;
     }else{
       result = isNonNumericInput;
