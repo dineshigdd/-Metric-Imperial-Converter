@@ -22,9 +22,11 @@ function ConvertHandler() {
       var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g).length;
     }
     
+    
     console.log("nonNumericInput:" + isNonNumericInput)
     console.log("numberOfUnits:" + numberOfUnits);
     if( numberOfUnits == 1 ){
+      input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g);
       result= numericInput;
     }else{
       result = isNonNumericInput;
