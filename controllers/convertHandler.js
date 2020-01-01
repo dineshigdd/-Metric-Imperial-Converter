@@ -15,19 +15,21 @@ function ConvertHandler() {
     //https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
     
   //if input has ONLY numercal values and Math operators
-    var RegEx = RegExp('[a-z]','ig');
-    var isNonNumericInput = RegEx.test(input);
-    
-    if(isNonNumericInput){
-      var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g).length;
-    }
+   
     
     
-    console.log("nonNumericInput:" + isNonNumericInput)
+     var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g).length;  
+    
+   
     console.log("numberOfUnits:" + numberOfUnits);
     if( numberOfUnits == 1 ){
-      input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g);
-      result= numericInput;
+      var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g,0);
+      
+      var RegEx = RegExp('[a-z]','ig');
+      var isNonNumericInput = RegEx.test(alteredInput);
+      console.log("nonNumericInput:" + isNonNumericInput);
+      if(!isNonNumericInput)
+          result= numericInput;
     }else{
       result = isNonNumericInput;
     }
