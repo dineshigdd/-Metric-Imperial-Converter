@@ -33,8 +33,13 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var result;
-    var count = input.match(/(km)/ig).length;
+    var count = input.match(/(km)/).length;
     console.log("count :"+count);
+    
+    if( count == 1){
+      result = input.match(/(km)/);
+    }
+    
     return result;
   };
   
