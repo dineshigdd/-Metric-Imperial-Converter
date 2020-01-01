@@ -11,6 +11,7 @@ function ConvertHandler() {
   this.getNum = function(input) {
     var result;
     var numericInput =  input.match(/\d[\/\d.]*|\d/);
+    console.log('numericInput :'+numericInput);
     //https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
     
   //if input has ONLY numercal values and Math operators
@@ -18,10 +19,11 @@ function ConvertHandler() {
     var isNonNumericInput = RegEx.test(input);
     
     if(!isNonNumericInput){
-      isOne = 
+      var isNumberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;
     }
+    
     console.log("nonNumericInput:" + isNonNumericInput)
-    if( !isNonNumericInput ){
+    if( isNumberOfUnits == 1 ){
       result= numericInput;
     }else{
       result = isNonNumericInput;
@@ -32,7 +34,7 @@ function ConvertHandler() {
     
        // var result =  input.match(/\d+[\/\d.]*|\d/);
     //input.match(/\d+\.?\d+\/?\d+\.?\d+/); my effort   
-    console.log("converthandler:" + result);
+    console.log("converthandler result:" + result);
      return result;
   };
   
