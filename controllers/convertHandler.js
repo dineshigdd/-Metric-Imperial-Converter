@@ -13,11 +13,14 @@ function ConvertHandler() {
     //https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
     
   //if input has ONLY numercal values and Math operators
-    var nonNumericInput = input.test(/[A-Z|[a-z]/g);
+    var RegEx = RegExp('[A-Z|[a-z]','g');
+    var isNonNumericInput = RegEx.test(input);
     console.log("nonNumericInput:" + nonNumericInput)
+    if( !isNonNumericInput ){
+      res
+    }
     
-    if( nonNumericInput != null)
-       result = input
+   
     //else "error"
     
        // var result =  input.match(/\d+[\/\d.]*|\d/);
