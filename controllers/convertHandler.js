@@ -9,7 +9,8 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result =  input.match(/\d[\/\d.]*|\d/);
+    var result;
+    var numericInput =  input.match(/\d[\/\d.]*|\d/);
     //https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
     
   //if input has ONLY numercal values and Math operators
@@ -33,13 +34,14 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var result;
-    var count = input.match(/(km)/).length;
+    console.log("input unit:"+input)
+    var count = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g).length;
     console.log("count :"+count);
     
     if( count == 1){
-      result = input.match(/(km)/);
+      result = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g);
     }
-    
+    console.log("unit is: " +result);
     return result;
   };
   

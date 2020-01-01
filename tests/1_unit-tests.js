@@ -47,7 +47,7 @@ suite('Unit Tests', function(){
     });
     
     test('No Numerical Input', function(done) {
-      var input = '1/2km';
+      var input = '1/2L';
       assert.equal(convertHandler.getNum(input),NaN);
       done();
     }); 
