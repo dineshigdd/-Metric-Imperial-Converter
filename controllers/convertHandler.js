@@ -14,8 +14,7 @@ function ConvertHandler() {
     console.log('numericInput :'+numericInput);
     //https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
     
-  //if input has ONLY numercal values and Math operators
-   
+  //if input has ONLY numercal values and Math operators  
     
     
      var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g).length;  
