@@ -13,7 +13,7 @@ function ConvertHandler() {
     //https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
     
   //if input has ONLY numercal values and Math operators
-    var RegEx = RegExp('[A-Z]|[a-z]','g');
+    var RegEx = RegExp('[a-z]','ig');
     var isNonNumericInput = RegEx.test(input);
     console.log("nonNumericInput:" + isNonNumericInput)
     if( !isNonNumericInput ){
@@ -33,6 +33,7 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     var result;
+    input.match(/(km)|(mi)|(gal)|L|(lbs)|(kg)/ig);
     
     return result;
   };
