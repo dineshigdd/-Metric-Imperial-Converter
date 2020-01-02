@@ -17,37 +17,37 @@ suite('Unit Tests', function(){
   suite('Function convertHandler.getNum(input)', function() {
     
     test('Whole number input', function(done) {
-      var input = '32gal';
+      var input = '32KG';
       assert.equal(convertHandler.getNum(input),32);
       done();
     });
     
     test('Decimal Input', function(done) {
-      var input = '32.789gal';
+      var input = '32.789KG';
       assert.equal(convertHandler.getNum(input),32.789);
       done();
     });
     
     test('Fractional Input', function(done) {
-      var input = '23/33gal';
+      var input = '23/33KG';
       assert.equal(convertHandler.getNum(input),'23/33');
       done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      var input = '2.3333/33.33gal';
+      var input = '2.3333/33.33KG';
       assert.equal(convertHandler.getNum(input),'2.3333/33.33');
       done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      var input = '2.3333//33.33gal';
+      var input = '2.3333//33.33KG';
       assert.equal(convertHandler.getNum(input),'2.3333/33.33');
       done();
     });
     
     test('No Numerical Input', function(done) {
-      var input = '1/2gal';
+      var input = '1/2KG';
       assert.equal(convertHandler.getNum(input),NaN);
       done();
     }); 
@@ -59,7 +59,7 @@ suite('Unit Tests', function(){
     test('For Each Valid Unit Inputs', function(done) {
       var input = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
       input.forEach(function(ele) {       
-        assert.equal(convertHandler.getUnit(ele),ele)
+        assert.equal(convertHandler.getUnit(),'KG');
       });
       done();
     });

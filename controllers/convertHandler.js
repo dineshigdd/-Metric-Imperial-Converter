@@ -49,7 +49,7 @@ function ConvertHandler() {
     console.log("count :"+count);
     
     if( count == 1){
-      result = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig);
+      result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig);
     }
     
     console.log("unit is: " +result);
