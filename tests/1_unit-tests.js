@@ -23,7 +23,7 @@ suite('Unit Tests', function(){
     });
     
     test('Decimal Input', function(done) {
-      var input = '32.7a89L';
+      var input = '32.78a9L';
       assert.equal(convertHandler.getNum(input),32.789);
       done();
     });
@@ -35,7 +35,7 @@ suite('Unit Tests', function(){
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      var input = '2.3333/33.33L';
+      var input = '2.333oo3/33.33L';
       assert.equal(convertHandler.getNum(input),'2.3333/33.33');
       done();
     });
