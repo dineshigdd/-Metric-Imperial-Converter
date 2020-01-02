@@ -35,7 +35,7 @@ suite('Unit Tests', function(){
     });
     
     test('Fractional Input w/ Decimal', function(done) {
-      var input = '2.333oo3/33.33L';
+      var input = '2.3333/33.33L';
       assert.equal(convertHandler.getNum(input),'2.3333/33.33');
       done();
     });

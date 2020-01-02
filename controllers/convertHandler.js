@@ -17,12 +17,12 @@ function ConvertHandler() {
   //if input has ONLY numercal values and Math operators  
     
     
-     var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g).length;  
+     var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;  
     
    
     console.log("numberOfUnits:" + numberOfUnits);
     if( numberOfUnits == 1 ){
-      var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g,0);
+      var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig,0);
       
       var RegEx = RegExp('[a-z]','ig');
       var isNonNumericInput = RegEx.test(alteredInput);
@@ -45,11 +45,11 @@ function ConvertHandler() {
   this.getUnit = function(input) {
     var result;
     console.log("input unit:"+input)
-    var count = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g).length;
+    var count = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;
     console.log("count :"+count);
     
     if( count == 1){
-      result = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/g);
+      result = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig);
     }
     console.log("unit is: " +result);
     return result;
