@@ -41,7 +41,7 @@ function ConvertHandler() {
     console.log("converthandler result:" + result);
      return result;
   };
-  
+ 
   this.getUnit = function(input) {
     var result;
     console.log("input unit:"+input)
@@ -51,6 +51,7 @@ function ConvertHandler() {
     if( count == 1){
       result = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig);
     }
+    
     console.log("unit is: " +result);
     return result;
   };
