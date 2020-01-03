@@ -63,7 +63,9 @@ function ConvertHandler() {
   
   this.getReturnUnit = function(initUnit) {
     var result;
-    
+    switch(initUnit){
+        case 
+    }
     return result;
   };
 
