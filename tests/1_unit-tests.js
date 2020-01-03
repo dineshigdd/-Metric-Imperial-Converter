@@ -47,8 +47,8 @@ suite('Unit Tests', function(){
     });
     
     test('No Numerical Input', function(done) {
-      var input = '1/2L';
-      assert.equal(convertHandler.getNum(input),NaN);
+      var input = '1/aL';
+      assert.equal(convertHandler.getNum(input),true);
       done();
     }); 
     
