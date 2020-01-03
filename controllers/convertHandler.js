@@ -63,7 +63,7 @@ function ConvertHandler() {
   
   this.getReturnUnit = function(initUnit) {
     var result;
-    switch(initUnit.toLowerCase()){
+    switch(initUnit.toString().toLowerCase()){
       case 'km':result = 'mi';
         break;
       case 'kg':result = 'lbs';
@@ -82,7 +82,19 @@ function ConvertHandler() {
 
   this.spellOutUnit = function(unit) {
     var result;
-    
+    switch(unit.toString().toLowerCase()){
+      case 'km':result = 'kilometers';
+        break;
+      case 'kg':result = 'kilograms';
+        break;
+      case 'l':result = 'liters';
+        break;
+      case 'mi':result = 'miles';
+        break;
+      case 'lbs':result = 'pounds';
+        break;
+      case 'gal': result = 'gallons';
+        break;
     return result;
   };
   
