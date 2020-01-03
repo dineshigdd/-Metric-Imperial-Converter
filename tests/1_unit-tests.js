@@ -47,8 +47,8 @@ suite('Unit Tests', function(){
     });
     
     test('No Numerical Input', function(done) {
-      var input = '1/aL';
-      assert.equal(convertHandler.getNum(input),true);
+      var input = 'a/aL';
+      assert.equal(convertHandler.getNum(input),undefined);
       done();
     }); 
     
