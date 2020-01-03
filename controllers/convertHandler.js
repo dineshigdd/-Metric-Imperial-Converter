@@ -10,27 +10,24 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result;
-    var numericInput =  input.match(/\d[\/\d.]*|\d/);
-    var RegEx = RegExp('\/\/','g');
-    var isDoublefraction = RegEx.test(input);
+    var numericInput =  input.match(/\d[\/\d.]*|\d/);      
     
     console.log("input in query string:"+input);
-    console.log('isDoublefraction :'+isDoublefraction);
+
     //https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
     
   //if input has ONLY numercal values and Math operators  
     
     
-     var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;  
-    
+     var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;     
    
     console.log("numberOfUnits:" + numberOfUnits);
     if( numberOfUnits == 1 ){
       var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig,0);
       
-      RegEx = RegExp('[a-z]','ig');
+      var RegEx = RegExp('[a-z]','ig');
       var isNonNumericInput = RegEx.test(alteredInput);
-      console.log("nonNumericInput:" + isNonNumericInput);
+      //console.log("nonNumericInput:" + isNonNumericInput);
       
       if(!isNonNumericInput)
           result= numericInput;
@@ -43,21 +40,21 @@ function ConvertHandler() {
     
        // var result =  input.match(/\d+[\/\d.]*|\d/);
     //input.match(/\d+\.?\d+\/?\d+\.?\d+/); my effort   
-    console.log("converthandler result:" + result);
+   // console.log("converthandler result:" + result);
      return result;
   };
  
   this.getUnit = function(input) {
     var result;
-    console.log("input unit:"+input)
+    //console.log("input unit:"+input)
     var count = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;
-    console.log("count :"+count);
+   // console.log("count :"+count);
     
     if( count == 1 ){
       result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig);
     }
     
-    console.log("unit is: " +result);
+    //console.log("unit is: " +result);
     return result;
   };
   
@@ -95,8 +92,9 @@ function ConvertHandler() {
         break;
       case 'gal': result = 'gallons';
         break;
-    return result;
-  };
+   };
+     return result;
+  }
   
   this.convert = function(initNum, initUnit) {
     const galToL = 3.78541;
