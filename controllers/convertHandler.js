@@ -101,6 +101,20 @@ function ConvertHandler() {
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     var result;
+    switch(initUnit.toString().toLowerCase()){
+      case 'km':result = 'kilometers';
+        break;
+      case 'kg':result = 'kilograms';
+        break;
+      case 'l':result = 'liters';
+        break;
+      case 'mi':result = 'miles';
+        break;
+      case 'lbs':result = 'pounds';
+        break;
+      case 'gal': result = 'gallons';
+        break;
+   };
     
     return result;
   };
