@@ -19,35 +19,36 @@ function ConvertHandler() {
   //if input has ONLY numercal values and Math operators  
     
     try{
-    var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;     
+        var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;     
    
    
-    console.log("numberOfUnits:" + numberOfUnits);
-    
-    
-    if( numberOfUnits == 1 ){
-      var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig,0);
+        console.log("numberOfUnits:" + numberOfUnits);
+
+
+          if( numberOfUnits == 1 ){
+            var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig,0);
+
+            var RegEx = RegExp('[a-z]','ig');
+            var isNonNumericInput = RegEx.test(alteredInput);
+            //console.log("nonNumericInput:" + isNonNumericInput);
+
+            if(!isNonNumericInput)
+                result= numericInput;
+          }else{
+                result = isNonNumericInput;
+          }
       
-      var RegEx = RegExp('[a-z]','ig');
-      var isNonNumericInput = RegEx.test(alteredInput);
-      //console.log("nonNumericInput:" + isNonNumericInput);
-      
-      if(!isNonNumericInput)
-          result= numericInput;
-    }else{
-          result = isNonNumericInput;
-          
-    }
-      
-       return result;
-    }catch{}   
+       
+    }catch{
+      result = "error";
+    }   
    
     //else "error"
     
        // var result =  input.match(/\d+[\/\d.]*|\d/);
     //input.match(/\d+\.?\d+\/?\d+\.?\d+/); my effort   
    // console.log("converthandler result:" + result);
-    
+    return result;
   };
  
   this.getUnit = function(input) {
@@ -62,7 +63,7 @@ function ConvertHandler() {
         result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig);
       }    
     }catch{
-      result = "error";
+      result = 'error';
     }
     console.log("unit is: " +result);
     return result = result.toString();
@@ -132,7 +133,9 @@ function ConvertHandler() {
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result 
     
-    
+    if( initNum == "error"){
+      
+    }
     result = {  
                     'initNum': Number(initNum),
                     'initUnit': initUnit,
