@@ -18,10 +18,13 @@ function ConvertHandler() {
     
   //if input has ONLY numercal values and Math operators  
     
-    
-     var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;     
+    try{
+    var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;     
+   
    
     console.log("numberOfUnits:" + numberOfUnits);
+    
+    
     if( numberOfUnits == 1 ){
       var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig,0);
       
@@ -33,31 +36,33 @@ function ConvertHandler() {
           result= numericInput;
     }else{
           result = isNonNumericInput;
+          
     }
-    
+      
+       return result;
+    }catch{}   
    
     //else "error"
     
        // var result =  input.match(/\d+[\/\d.]*|\d/);
     //input.match(/\d+\.?\d+\/?\d+\.?\d+/); my effort   
    // console.log("converthandler result:" + result);
-     return result;
+    
   };
  
   this.getUnit = function(input) {
     var result;
-    console.log("inputtttt unit:"+input);
-    
-    var RegEx = RegExp('(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig)','ig');
-    
-    if(RegEx.test(input)){
+    console.log("inputtttt unit:"+input);  
+   
+    try{
+   
     var count = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;
    // console.log("count :"+count);
      if( count == 1 ){
         result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig);
       }    
-    }else{
-      
+    }catch{
+      result = "error";
     }
     console.log("unit is: " +result);
     return result = result.toString();
@@ -125,7 +130,10 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result = {  
+    var result 
+    
+    
+    result = {  
                     'initNum': Number(initNum),
                     'initUnit': initUnit,
                     'returnNum':returnNum,
