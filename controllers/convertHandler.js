@@ -102,17 +102,17 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     var result;
     switch(initUnit.toString().toLowerCase()){
-      case 'km':result = 'kilometers';
+      case 'km':result = initNum / miToKm;
         break;
-      case 'kg':result = 'kilograms';
+      case 'kg':result = initNum / lbsToKg;
         break;
-      case 'l':result = 'liters';
+      case 'l':result = initNum / galToL;
         break;
-      case 'mi':result = 'miles';
+      case 'mi':result = initNum * miToKm;
         break;
-      case 'lbs':result = 'pounds';
+      case 'lbs':result = initNum * lbsToKg;
         break;
-      case 'gal': result = 'gallons';
+      case 'gal': result = initNum * galToL;
         break;
    };
     
