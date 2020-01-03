@@ -63,8 +63,19 @@ function ConvertHandler() {
   
   this.getReturnUnit = function(initUnit) {
     var result;
-    switch(initUnit){
-        case 
+    switch(initUnit.toLowerCase()){
+      case 'km':result = 'mi';
+        break;
+      case 'kg':result = 'lbs';
+        break;
+      case 'l':result = 'gal';
+        break;
+      case 'mi':result = 'km';
+        break;
+      case 'lbs':result = 'kg';
+        break;
+      case 'gal': result = 'l';
+        break;
     }
     return result;
   };
