@@ -27,10 +27,11 @@ function ConvertHandler() {
       var RegEx = RegExp('[a-z]','ig');
       var isNonNumericInput = RegEx.test(alteredInput);
       console.log("nonNumericInput:" + isNonNumericInput);
+      
       if(!isNonNumericInput)
           result= numericInput;
     }else{
-      result = isNonNumericInput;
+          result = isNonNumericInput;
     }
     
    
@@ -48,7 +49,7 @@ function ConvertHandler() {
     var count = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;
     console.log("count :"+count);
     
-    if( count == 1){
+    if( count == 1 ){
       result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig);
     }
     
