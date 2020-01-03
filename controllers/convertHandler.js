@@ -46,16 +46,18 @@ function ConvertHandler() {
  
   this.getUnit = function(input) {
     var result;
-    console.log("inputtttt unit:"+input)
-    var count = '';
-    try{
-    count = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;
+    console.log("inputtttt unit:"+input);
+    
+    var RegEx = RegExp('(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig)','ig');
+    
+    if(RegEx.test(input)){
+    var count = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;
    // console.log("count :"+count);
      if( count == 1 ){
         result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig);
       }    
-    }catch{
-      result = "invalid unit";
+    }else{
+      
     }
     console.log("unit is: " +result);
     return result = result.toString();
