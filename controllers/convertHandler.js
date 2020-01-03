@@ -10,7 +10,8 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result;
-    var numericInput =  input.match(/\d[\/\d.]*|\d/);      
+          
+    
     
     console.log("input in query string:"+input);
 
@@ -33,7 +34,13 @@ function ConvertHandler() {
             //console.log("nonNumericInput:" + isNonNumericInput);
 
             if(!isNonNumericInput)
-                result= numericInput;
+                var numericInput =  input.match(/\d[\/\d.]*|\d/);
+            
+                if( numericInput != null ){
+                      result = numericInput;
+                }else{
+                   result = "invalid number";
+                }
           }else{
                 result = "invalid number";
           }
@@ -133,10 +140,10 @@ function ConvertHandler() {
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result 
     
-    if( initNum == "invalid number"){
+    if( initNum == "invalid number" ){
        result = {"error":initNum };
       
-    }else if( initUnit == "invalid unit"){
+    }else if( initUnit == "invalid unit" || initNum == "error"){
       result = {"error":initUnit };
       
     }else {
