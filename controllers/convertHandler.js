@@ -140,15 +140,12 @@ function ConvertHandler() {
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result 
     
-    if( initNum == "invalid number" ){
+    if(initUnit == "invalid unit" || initNum == 'error'){
+      result = {"error":"invalid Unit" };
+    }else if( initNum == "invalid number" ){
        result = {"error":initNum };
       
-    }else if( initUnit == "invalid unit" || initNum == "error"){
-      result = {"error":initUnit };
-      
-    }else if( initNum == "error"){
-      result = {"error":"invalid input" };
-    }      
+    }    
       else {
       result = {  
                       'initNum': Number(initNum),
