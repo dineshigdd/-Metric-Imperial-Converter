@@ -35,7 +35,7 @@ function ConvertHandler() {
             if(!isNonNumericInput)
                 result= numericInput;
           }else{
-                result = isNonNumericInput;
+                result = "invalid number";
           }
       
        
@@ -63,7 +63,7 @@ function ConvertHandler() {
         result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig);
       }    
     }catch{
-      result = 'error';
+      result = 'invalid unit';
     }
     console.log("unit is: " +result);
     return result = result.toString();
@@ -133,15 +133,20 @@ function ConvertHandler() {
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result 
     
-    if( initNum == "error"){
+    if( initNum == "invalid number"){
+       result = {"error":initNum };
       
+    }else if( initUnit == "invalid unit"){
+      result = {"error":initUnit };
+      
+    }else {
+      result = {  
+                      'initNum': Number(initNum),
+                      'initUnit': initUnit,
+                      'returnNum':returnNum,
+                      'returnUnit':returnUnit
+                   };
     }
-    result = {  
-                    'initNum': Number(initNum),
-                    'initUnit': initUnit,
-                    'returnNum':returnNum,
-                    'returnUnit':returnUnit
-                 };
     // {"initNum":1,"initUnit":"lbs","returnNum":0.45359,"returnUnit":"kg","string":"1 pounds converts to 0.45359 kilograms"}
     return result;
   };
