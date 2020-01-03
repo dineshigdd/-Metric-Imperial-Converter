@@ -146,7 +146,10 @@ function ConvertHandler() {
     }else if( initUnit == "invalid unit" || initNum == "error"){
       result = {"error":initUnit };
       
-    }else {
+    }else if( initNum == "error"){
+      result = {"error":"invalid input" };
+    }      
+      else {
       result = {  
                       'initNum': Number(initNum),
                       'initUnit': initUnit,
