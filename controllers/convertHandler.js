@@ -11,7 +11,11 @@ function ConvertHandler() {
   this.getNum = function(input) {
     var result;
     var numericInput =  input.match(/\d[\/\d.]*|\d/);
-    console.log('numericInput :'+numericInput);
+    var RegEx = RegExp('\/\/','g');
+    var isDoublefraction = RegEx.test(input);
+    
+    console.log("input in query string:"+input);
+    console.log('isDoublefraction :'+isDoublefraction);
     //https://stackoverflow.com/questions/21443364/regex-to-match-integers-decimals-and-fractions
     
   //if input has ONLY numercal values and Math operators  
@@ -24,7 +28,7 @@ function ConvertHandler() {
     if( numberOfUnits == 1 ){
       var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig,0);
       
-      var RegEx = RegExp('[a-z]','ig');
+      RegEx = RegExp('[a-z]','ig');
       var isNonNumericInput = RegEx.test(alteredInput);
       console.log("nonNumericInput:" + isNonNumericInput);
       
