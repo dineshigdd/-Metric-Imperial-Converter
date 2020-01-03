@@ -120,8 +120,13 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result;
-    
+    var result = {  
+                    'initNum': Number(initNum),
+                    'initUnit': Number(initUnit),
+                    'returnNum':returnNum,
+                    'returnUnit':Number(returnUnit)
+                 };
+    // {"initNum":1,"initUnit":"lbs","returnNum":0.45359,"returnUnit":"kg","string":"1 pounds converts to 0.45359 kilograms"}
     return result;
   };
   
