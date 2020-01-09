@@ -23,16 +23,22 @@ function ConvertHandler() {
         //var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;     
    
    
-        console.log("numberOfUnits:" + numberOfUnits);
+       // console.log("numberOfUnits:" + numberOfUnits);
 
        
-      
+          var alteredInput = null;
          //if( numberOfUnits =>1 ){
-            var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig,0);
+            alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig,0);
+            console.log("alteredInput:" +alteredInput)
             var RegEx = RegExp('[a-z]','ig');
             var isNonNumericInput;
             
-             isNonNumericInput = RegEx.test(alteredInput);
+            if( alteredInput == null ){
+              console.log("test input")
+               isNonNumericInput = RegEx.test(input);
+            }else{
+               isNonNumericInput = RegEx.test(alteredInput);
+            }
             //console.log("nonNumericInput:" + isNonNumericInput);
 
                 if(isNonNumericInput)
@@ -144,13 +150,13 @@ function ConvertHandler() {
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
     var result;
 
-    if(  (initNum == "invalid number" ||  initNum == "error" ) &&  initUnit == "invalid unit" ){
+    if(  initNum == "invalid number"  &&  initUnit == "invalid unit" ){
         result = {"error":"invalid number"+ " and " + initUnit };
       
     }else if( initNum == "invalid number" ){
        result = {"error":initNum };
       
-    }else if( initUnit == "invalid unit" || initNum == "error"){
+    }else if( initUnit == "invalid unit" ){
       result = {"error":initUnit };
       
     }else {
