@@ -44,15 +44,16 @@ function ConvertHandler() {
              numericInput =  input.match(/\d[\/\d.]*|\d/);
               console.log("numeric input:"+numericInput);
     
-                if(isNonNumericInput){
-                   
+                if(isNonNumericInput){   //if input has [a-z]                
 
-                    if( numericInput != null ){
-                          result = numericInput;
-                    }else{
-                       result = "invalid number";
-                    }
-                }else{
+                      if( numericInput != null ){                          
+                             result = numericInput;
+                      }else{
+                         result = "invalid number";
+                      }
+                }else{ //if input has only numbers
+                   var count = numericInput.match(/[\/]*/ig).length; 
+                           console.log("count /:"+count);
                   result = numericInput;
                 }
           //      }
