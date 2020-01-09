@@ -50,11 +50,12 @@ suite('Functional Tests', function() {
       test('Convert 3/7.2/4kg (invalid number)', function(done) {
         chai.request(server)
           .get('api/convert')
-          .query({input: '32g' })
+          .query({input: '3/7.2/4kg' })
           .end(function(err, res){
             assert.equal(res.status, 200);
             assert.equal(res.body.initNum, 3/7.2/4);
             assert.equal(res.body.initUnit, 'kg');
+           console.log("res.body.returnNum:" +res.body);
             assert.approximately(res.body.returnNum,'invalid number');
             assert.equal(res.body.returnUnit,'kg');
             done();
