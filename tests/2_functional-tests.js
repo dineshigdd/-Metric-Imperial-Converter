@@ -38,8 +38,7 @@ suite('Functional Tests', function() {
           .get('api/convert')
           .query({input: '32g' })
           .end(function(err, res){
-            console.log("res.body.returnUnit:"+ res.body.returnUnit)
-            assert.equal(res.body.returnUnit,null);
+            assert.equal(res.body.returnUnit,"invalid unit");
           done();           
         });        
       });
