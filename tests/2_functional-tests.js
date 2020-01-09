@@ -39,10 +39,10 @@ suite('Functional Tests', function() {
           .query({input: '32g' })
           .end(function(err, res){
             assert.equal(res.status, 200);
-            assert.equal(res.body.initNum, 10);
+            assert.equal(res.body.initNum, 32);
             assert.equal(res.body.initUnit, 'g');
-            // assert.approximately(res.body.returnNum, 'invalid unit');
-            assert.equal(res.body, 'invalid unit');
+            //assert.approximately(res.body.returnNum, [32]);
+          assert.equal(res.body.returnUnit, 'invalid unit');
             done();
           });        
       });

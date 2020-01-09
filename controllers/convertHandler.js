@@ -168,10 +168,23 @@ function ConvertHandler() {
         result = {error:"invalid number"+ " and " + initUnit };
       
     }else if( initNum == "invalid number" ){
-       result = {error:initNum };
+       result =  {  
+                      'initNum': Number(initNum),
+                      'initUnit': initUnit,
+                      'returnNum':returnNum,
+                      'returnUnit':returnUnit
+                   };
+         //{error:initNum };
       
     }else if( initUnit == "invalid unit" ){
-      result = {error:initUnit };
+      result =  {  
+                      'initNum': Number(initNum),
+                      'initUnit': initUnit,
+                      'returnNum':returnNum,
+                      'returnUnit':returnUnit
+                   };
+        
+       // {error:initUnit };
       
     }else {
       result =     {  
