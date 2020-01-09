@@ -32,7 +32,7 @@ function ConvertHandler() {
             console.log("alteredInput:" +alteredInput)
             var RegEx = RegExp('[a-z]','ig');
             var isNonNumericInput;
-            var numericInput;
+            var numericInput = null;
     
             if( alteredInput == input ){
               console.log("test input")
@@ -42,7 +42,7 @@ function ConvertHandler() {
             }
             console.log("nonNumericInput:" + isNonNumericInput);
              numericInput =  input.match(/\d[\/\d.]*|\d/);
-              console.log("numeric input:"+numericInput);
+             console.log("numeric input:"+numericInput);
     
                 if(isNonNumericInput){   //if input has [a-z]                
 
@@ -52,9 +52,11 @@ function ConvertHandler() {
                          result = "invalid number";
                       }
                 }else{ //if input has only numbers
-                   var count = numericInput.match(/[\/]*/ig).length; 
-                           console.log("count /:"+count);
-                  result = numericInput;
+                   if( numericInput.toString().match(/\//g).length > 1 ) {
+                       result = "invalid number";
+                   }else{
+                       result = numericInput;
+                   }
                 }
           //      }
       
