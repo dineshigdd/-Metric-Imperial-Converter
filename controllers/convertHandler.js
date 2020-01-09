@@ -33,7 +33,7 @@ function ConvertHandler() {
             var RegEx = RegExp('[a-z]','ig');
             var isNonNumericInput;
             
-            if( alteredInput == null ){
+            if( alteredInput == input ){
               console.log("test input")
                isNonNumericInput = RegEx.test(input);
             }else{
