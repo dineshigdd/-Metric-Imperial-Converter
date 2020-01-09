@@ -71,8 +71,7 @@ function ConvertHandler() {
         result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig);
       }    
     }catch{
-      if( )
-      result = result + 'invalid unit';
+       result = 'invalid unit';
     }
     console.log("unit is: " +result);
     return result = result.toString();
@@ -140,9 +139,12 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result 
-    
-    if( initNum == "invalid number" ){
+    var result;
+
+    if(  (initNum == "invalid number" ||  initNum == "error" ) &&  initUnit == "invalid unit" ){
+        result = {"error":"invalid number"+ " and " + initUnit };
+      
+    }else if( initNum == "invalid number" ){
        result = {"error":initNum };
       
     }else if( initUnit == "invalid unit" || initNum == "error"){
