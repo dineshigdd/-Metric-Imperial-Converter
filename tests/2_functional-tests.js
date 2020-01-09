@@ -55,7 +55,7 @@ suite('Functional Tests', function() {
             assert.equal(res.status, 200);
             assert.equal(res.body.initNum, 3/7.2/4);
             assert.equal(res.body.initUnit, 'kg');
-            assert.approximately(err.body.returnNum,'invalid number');
+            assert.equal(err.body.returnNum,'invalid number');
             assert.equal(res.body.returnUnit,'kg');
             done();
           }); 
