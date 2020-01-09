@@ -147,7 +147,7 @@ function ConvertHandler() {
       result = {"error":initUnit };
       
     }else {
-      result = {  
+      result =     {  
                       'initNum': Number(initNum),
                       'initUnit': initUnit,
                       'returnNum':returnNum,
