@@ -52,10 +52,17 @@ function ConvertHandler() {
                          result = "invalid number";
                       }
                 }else{ //if input has only numbers
-                   if( numericInput.toString().match(/\//g).length > 1 ) {
-                       result = "invalid number";
-                   }else{
-                       result = numericInput;
+                   try{
+                     var countSlashes = numericInput.toString().match(/\//g).length;
+                     
+                      if( countSlashes > 1 ){
+                           result = "invalid number";
+                      }
+                        //else{
+                         //  result = numericInput;
+                      //}
+                   }catch{
+                      result = numericInput;
                    }
                 }
           //      }

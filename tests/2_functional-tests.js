@@ -53,10 +53,10 @@ suite('Functional Tests', function() {
           .query({input: '32g' })
           .end(function(err, res){
             assert.equal(res.status, 200);
-            assert.equal(res.body.initNum, 32);
-            assert.equal(res.body.initUnit, 'g');
-            assert.approximately(res.body.returnNum,32);
-            assert.equal(res.body.returnUnit, 'invalid number');
+            assert.equal(res.body.initNum, 3/7.2/4);
+            assert.equal(res.body.initUnit, 'kg');
+            assert.approximately(res.body.returnNum,'invalid number');
+            assert.equal(res.body.returnUnit,'kg');
             done();
           }); 
       });  
