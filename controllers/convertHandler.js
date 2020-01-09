@@ -19,40 +19,40 @@ function ConvertHandler() {
     
   //if input has ONLY numercal values and Math operators  
     
-    try{
-        var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;     
+    //try{
+        //var numberOfUnits =  input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;     
    
    
         console.log("numberOfUnits:" + numberOfUnits);
 
-        var RegEx = RegExp('[a-z]','ig');
-         var isNonNumericInput;
+       
       
-          if( numberOfUnits == 1 ){
+         //if( numberOfUnits =>1 ){
             var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig,0);
-
+            var RegEx = RegExp('[a-z]','ig');
+            var isNonNumericInput;
             
              isNonNumericInput = RegEx.test(alteredInput);
             //console.log("nonNumericInput:" + isNonNumericInput);
 
-            if(!isNonNumericInput)
-                var numericInput =  input.match(/\d[\/\d.]*|\d/);
-            
-                if( numericInput != null ){
-                      result = numericInput;
-                }else{
-                   result = "invalid number";
-                }
-          }else if( numberOfUnits > 1 ){
-               isNonNumericInput = RegEx.test(alteredInput);
-                result = "invalid number";
-          }
+                if(isNonNumericInput)
+//                     var numericInput =  input.match(/\d[\/\d.]*|\d/);
+
+//                     if( numericInput != null ){
+//                           result = numericInput;
+//                     }else{
+//                        result = "invalid number";
+//                     }
+                // }else {
+
+                    result = "invalid number";
+          //      }
       
        
-    }catch{
-      result = "error";
-      console.log("ddd")
-    }   
+    // }catch{
+    //   result = "error";
+    //   console.log("ddd")
+    // }   
    
     //else "error"
     
