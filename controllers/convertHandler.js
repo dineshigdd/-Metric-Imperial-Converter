@@ -25,12 +25,14 @@ function ConvertHandler() {
    
         console.log("numberOfUnits:" + numberOfUnits);
 
-
+        var RegEx = RegExp('[a-z]','ig');
+         var isNonNumericInput;
+      
           if( numberOfUnits == 1 ){
             var alteredInput = input.replace(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig,0);
 
-            var RegEx = RegExp('[a-z]','ig');
-            var isNonNumericInput = RegEx.test(alteredInput);
+            
+             isNonNumericInput = RegEx.test(alteredInput);
             //console.log("nonNumericInput:" + isNonNumericInput);
 
             if(!isNonNumericInput)
@@ -41,7 +43,8 @@ function ConvertHandler() {
                 }else{
                    result = "invalid number";
                 }
-          }else{
+          }else if( numberOfUnits > 1 ){
+               isNonNumericInput = RegEx.test(alteredInput);
                 result = "invalid number";
           }
       
