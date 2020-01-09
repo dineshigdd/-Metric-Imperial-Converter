@@ -32,7 +32,8 @@ function ConvertHandler() {
             console.log("alteredInput:" +alteredInput)
             var RegEx = RegExp('[a-z]','ig');
             var isNonNumericInput;
-            
+            var numericInput;
+    
             if( alteredInput == input ){
               console.log("test input")
                isNonNumericInput = RegEx.test(input);
@@ -40,15 +41,17 @@ function ConvertHandler() {
                isNonNumericInput = RegEx.test(alteredInput);
             }
             console.log("nonNumericInput:" + isNonNumericInput);
-
+             numericInput =  input.match(/\d[\/\d.]*|\d/);
                 if(isNonNumericInput){
-                    var numericInput =  input.match(/\d[\/\d.]*|\d/);
+                   
 
                     if( numericInput != null ){
                           result = numericInput;
                     }else{
                        result = "invalid number";
                     }
+                }else{
+                  result = numericInput;
                 }
           //      }
       
