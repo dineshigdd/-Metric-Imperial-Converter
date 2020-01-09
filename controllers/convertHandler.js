@@ -9,7 +9,7 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result;
+    var result = null;
           
     
     
@@ -41,17 +41,15 @@ function ConvertHandler() {
             }
             console.log("nonNumericInput:" + isNonNumericInput);
 
-                if(isNonNumericInput)
-//                     var numericInput =  input.match(/\d[\/\d.]*|\d/);
+                if(isNonNumericInput){
+                    var numericInput =  input.match(/\d[\/\d.]*|\d/);
 
-//                     if( numericInput != null ){
-//                           result = numericInput;
-//                     }else{
-//                        result = "invalid number";
-//                     }
-                // }else {
-
-                    result = "invalid number";
+                    if( numericInput != null ){
+                          result = numericInput;
+                    }else{
+                       result = "invalid number";
+                    }
+                }
           //      }
       
        
