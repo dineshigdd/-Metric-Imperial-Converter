@@ -165,13 +165,13 @@ function ConvertHandler() {
     var result;
 
     if(  initNum == "invalid number"  &&  initUnit == "invalid unit" ){
-        result = {"error":"invalid number"+ " and " + initUnit };
+        result = {error:"invalid number"+ " and " + initUnit };
       
     }else if( initNum == "invalid number" ){
-       result = {"error":initNum };
+       result = {error:initNum };
       
     }else if( initUnit == "invalid unit" ){
-      result = {"error":initUnit };
+      result = {error:initUnit };
       
     }else {
       result =     {  
