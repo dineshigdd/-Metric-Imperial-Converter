@@ -48,6 +48,7 @@ function ConvertHandler() {
        
     }catch{
       result = "error";
+      console.log("ddd")
     }   
    
     //else "error"
@@ -70,7 +71,8 @@ function ConvertHandler() {
         result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig);
       }    
     }catch{
-      result = 'invalid unit';
+      if( )
+      result = result + 'invalid unit';
     }
     console.log("unit is: " +result);
     return result = result.toString();
