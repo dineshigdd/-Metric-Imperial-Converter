@@ -42,6 +42,8 @@ function ConvertHandler() {
             }
             console.log("nonNumericInput:" + isNonNumericInput);
              numericInput =  input.match(/\d[\/\d.]*|\d/);
+              console.log("numeric input:"+numericInput);
+    
                 if(isNonNumericInput){
                    
 
