@@ -120,6 +120,7 @@ console.log("countSlashes:" + result)
         break;
       case 'gal': result = 'l';
         break;
+      default:result = initUnit;
     }
     return result;
   };

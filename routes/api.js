@@ -23,7 +23,11 @@ module.exports = function (app) {
       var initUnit = convertHandler.getUnit(input);      
       var returnNum = convertHandler.convert(initNum, initUnit);
       var returnUnit = convertHandler.getReturnUnit(initUnit);
-      console.log("returnUnit:" + returnUnit);
+     console.log("input:" + input);
+                  console.log("returnUnit:" + initNum
+                  console.log("returnUnit:" + initNum
+                  console.log("returnUnit:" + initNum
+      console.log("returnUnit:" + initNum);
       var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
       
       res.json(toString)

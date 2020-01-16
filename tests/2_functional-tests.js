@@ -41,8 +41,8 @@ suite('Functional Tests', function() {
             assert.equal(res.status, 200);
             assert.equal(res.body.initNum, 32);
             assert.equal(res.body.initUnit, 'g');
-            //assert.approximately(res.body.returnNum, [32]);
-          assert.equal(res.body.returnUnit, 'invalid unit');
+        //    assert.approximately(res.body.returnNum, 32);
+            assert.equal(res.body.returnUnit, 'invalid unit');
             done();
           });        
       });
