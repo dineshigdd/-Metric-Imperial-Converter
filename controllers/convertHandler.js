@@ -168,29 +168,17 @@ console.log("countSlashes:" + result)
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result;
-
+    var result;    
+    
+    
     if(  initNum == "invalid number"  &&  initUnit == "invalid unit" ){
         result = {error:"invalid number"+ " and " + initUnit };
       
     }else if( initNum == "invalid number" ){
-       result =  {  
-                      'initNum': Number(initNum),
-                      'initUnit': initUnit,
-                      'returnNum':returnNum,
-                      'returnUnit':returnUnit
-                   };
-         //{error:initNum };
+        {error:initNum };
       
     }else if( initUnit == "invalid unit" ){
-      result =  {  
-                      'initNum': Number(initNum),
-                      'initUnit': initUnit,
-                      'returnNum':returnNum,
-                      'returnUnit':returnUnit
-                   };
-        
-       // {error:initUnit };
+      result = {error:initUnit };
       
     }else {
       result =     {  
