@@ -53,21 +53,22 @@ function ConvertHandler() {
                       }
                 }else{ //if input has only numbers
                   
-                  // try{
+                   try{
                      var countSlashes = numericInput.toString().match(/\//g).length;
                      
                       if( countSlashes > 1 ){
                            result = "invalid number";
                         }else{
-                          console.log("split:" + numericInput.toString().split('/'));
-                          var op_1 = numericInput.toString().split('/')[0]
-                          result = numericInput;
+                          console.log("split:" + numericInput.toString().split('/')[1]);
+                          var op_1 = Number(numericInput.toString().split('/')[0]);
+                          var op_2 = Number(numericInput.toString().split('/')[1]);
+                          result = op_1/op_2;
                         }
-//                    }catch{
-//                      
-//                            result = "this is a test";
+                   }catch{
                      
-//                    }
+                           result = numericInput;
+                     
+                   }
                 }
           //      }
       
