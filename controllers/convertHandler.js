@@ -58,7 +58,7 @@ function ConvertHandler() {
                       if( countSlashes > 1 ){
                            result = "invalid number";
                         }else{
-                          console.log("split:" + numericInput.split('/'));
+                          console.log("split:" + numericInput.toString().split('/'));
                           result = numericInput;
                         }
 //                    }catch{
