@@ -58,6 +58,7 @@ function ConvertHandler() {
                       if( countSlashes > 1 ){
                            result = "invalid number";
                         }else{
+                          numericInput
                           result = numericInput;
                         }
 //                    }catch{
