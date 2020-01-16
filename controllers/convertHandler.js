@@ -52,16 +52,19 @@ function ConvertHandler() {
                          result = "invalid number";
                       }
                 }else{ //if input has only numbers
-                   try{
+                  // try{
                      var countSlashes = numericInput.toString().match(/\//g).length;
                      
                       if( countSlashes > 1 ){
                            result = "invalid number";
+                        }else{
+                          result = numericInput;
                         }
-                   }catch{
-                           result = "this is a test";
+//                    }catch{
+//                      
+//                            result = "this is a test";
                      
-                   }
+//                    }
                 }
           //      }
       
@@ -76,7 +79,7 @@ function ConvertHandler() {
        // var result =  input.match(/\d+[\/\d.]*|\d/);
     //input.match(/\d+\.?\d+\/?\d+\.?\d+/); my effort   
    // console.log("converthandler result:" + result);
-    console.log("countSlashes:" + result)
+console.log("countSlashes:" + result)
     return result;
   };
  
