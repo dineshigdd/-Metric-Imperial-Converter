@@ -96,13 +96,13 @@ console.log("countSlashes:" + result)
     var count = input.match(/(km)|(mi)|(gal)|(L)|(lbs)|(kg)/ig).length;
    // console.log("count :"+count);
      if( count == 1 ){
-        result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig);
+        result = input.match(/(km)|(mi)|(gal)|(l)|(lbs)|(kg)/ig).toString();
       }    
     }catch{
        result = 'invalid unit';
     }
     console.log("unit is: " +result);
-    return result = result.toString();
+    return result = result;
   };
   
   this.getReturnUnit = function(initUnit) {
