@@ -52,6 +52,7 @@ function ConvertHandler() {
                          result = "invalid number";
                       }
                 }else{ //if input has only numbers
+                  
                   // try{
                      var countSlashes = numericInput.toString().match(/\//g).length;
                      
@@ -59,6 +60,7 @@ function ConvertHandler() {
                            result = "invalid number";
                         }else{
                           console.log("split:" + numericInput.toString().split('/'));
+                          var op_1 = numericInput.toString().split('/')[0]
                           result = numericInput;
                         }
 //                    }catch{
