@@ -57,11 +57,10 @@ function ConvertHandler() {
                      
                       if( countSlashes > 1 ){
                            result = "invalid number";
-                      }else{
-                           result = numericInput;
-                      }
+                        }
                    }catch{
-                           result = numericInput;
+                           result = "this is a test";
+                     
                    }
                 }
           //      }
@@ -77,6 +76,7 @@ function ConvertHandler() {
        // var result =  input.match(/\d+[\/\d.]*|\d/);
     //input.match(/\d+\.?\d+\/?\d+\.?\d+/); my effort   
    // console.log("converthandler result:" + result);
+    console.log("countSlashes:" + result)
     return result;
   };
  
