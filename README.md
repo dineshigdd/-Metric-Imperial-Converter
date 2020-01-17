@@ -8,3 +8,9 @@
 
 My notes:
 This Project is still under development. The test does not work as expected.
+
+on Glich
+--------
+river-manchego
+edit at https://glitch.com/edit/#!/river-manchego?path=.env:2:0
+https://river-manchego.glitch.me/
